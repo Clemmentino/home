@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  const mobileMenuButton = document.getElementById("mobile-menu-toggle-button");
+  const mobileMenuButton = document.getElementById("mobile-menu-button")
 
   if (mobileMenuButton && mobileMenu) {
     mobileMenuButton.addEventListener("click", () => {

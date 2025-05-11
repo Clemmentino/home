@@ -287,18 +287,6 @@ a:hover {
   font-size: 1rem;
 }
 
-@media (max-width: 400px) {
-  .mobile-menu a {
-    font-size: 0.95rem;
-    padding: 0.9rem 1.2rem;
-  }
-
-  .action-button,
-  .mobile-action-button {
-    font-size: 0.9rem;
-    padding: 0.7rem 1rem;
-  }
-}
 
 /* Hero Section */
 .hero-parallax {
