@@ -142,5 +142,5 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   updateThreatMonitoringData();
-  setInterval(updateThreatMonitoringData, 10001);
+  setInterval(updateThreatMonitoringData, 20000); // Update every 20 seconds
 });
