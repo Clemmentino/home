@@ -226,6 +226,8 @@ a:hover {
   box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
 }
 
+
+
 .action-button:hover {
   background-color: #0056b3;
   transform: translateY(-3px);
@@ -324,8 +326,10 @@ a:hover {
   width: 100%;
   padding: 0.85rem 1rem;
   font-size: 1rem;
+  margin: 0;
 }
 
+/* about Specific Styles */
 .sdg14-page-content {
   padding-top: 0;
   background-color:#f3f4f6;

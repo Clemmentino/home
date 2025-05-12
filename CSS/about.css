@@ -1,9 +1,8 @@
-/* OceanWatch - About Us Page Styling */
 html {
   scroll-behavior: smooth;
   height: 100%;
 }
-/* Base Styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -16,18 +15,30 @@ body {
   line-height: 1.6;
   background-color: #f3f4f6;
   overflow-x: hidden;
+  animation: fadeIn 0.8s ease-in-out forwards; 
 }
 
-/* Initial white screen */
-body {
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+#main-content-wrapper {
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
 }
 
-/* Once revealed */
-body.revealed {
+body.revealed #main-content-wrapper {
   opacity: 1;
 }
+
+
 
 h1,
 h2,
@@ -39,6 +50,15 @@ h6 {
   color: #064273;
   margin-top: 0;
   margin-bottom: 1rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 a {
@@ -48,7 +68,7 @@ a {
 }
 
 a:hover {
-  color: #0284c7;
+  color: #0ea5e9;
 }
 
 .main-content {
@@ -64,7 +84,7 @@ a:hover {
   right: 0;
   z-index: 100;
   background-color: transparent;
-  color: white;
+  color: #ffffff;
   transition: all 0.4s ease-in-out;
   width: 100%;
   padding: 0;
@@ -88,7 +108,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease;
 }
 
 .logo {
@@ -107,6 +127,7 @@ a:hover {
 .logo img:first-child {
   display: block;
 }
+
 .logo img:last-child {
   display: block;
 }
@@ -174,11 +195,11 @@ a:hover {
 
 .action-button {
   background-color: #007bff;
-  color: white;
+  color: #ffffff;
   font-weight: 600;
   padding: 0.75rem 1.5rem;
   border-radius: 2rem;
-  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out,
+  transition: background-color 0.3s ease, transform 0.2s ease,
     box-shadow 0.3s ease;
   font-size: 0.95rem;
   cursor: pointer;
@@ -204,7 +225,7 @@ a:hover {
 }
 
 .mobile-menu-button button {
-  color: white;
+  color: #ffffff;
   background: none;
   border: none;
   cursor: pointer;
@@ -226,7 +247,7 @@ a:hover {
   max-height: 0;
   overflow: hidden;
   background-color: rgba(6, 66, 115, 0.98);
-  color: white;
+  color: #ffffff;
   opacity: 0;
   width: 100%;
   transition: max-height 0.5s ease-in-out, opacity 0.4s ease-in-out;
@@ -243,6 +264,7 @@ a:hover {
   opacity: 1;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 #navbar.scrolled .mobile-menu.is-open {
   border-top: 1px solid #e0e0e0;
 }
@@ -287,21 +309,18 @@ a:hover {
   font-size: 1rem;
 }
 
-
-/* Hero Section */
 .hero-parallax {
-  position: relative;
   height: 95vh;
   min-height: 500px;
   background: url("../Images/statichero.jpg") no-repeat center center/cover;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-color: #003b73;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-
+  color: #ffffff;
   overflow: hidden;
+  background-attachment: fixed;
 }
 
 .overlay {
@@ -311,27 +330,29 @@ a:hover {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 30, 50, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  animation: fadeIn 1.5s ease-out forwards;
 }
 
 .hero-text {
   max-width: 900px;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
-  padding-right: 5rem;
+  padding: 2.5rem 1.5rem;
   text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
   transform: translateY(20px);
   opacity: 0;
   margin-bottom: 5rem;
   animation: slideInUp 1s ease-out 0.5s forwards;
+  text-align: left;
 }
 
 @media screen and (max-width: 768px) {
   .hero-text {
-    padding-right: 2rem;
-    padding-left: 2rem;
-    margin-bottom: 3rem;
+    padding: 1rem;
+    margin-bottom: 50%;
+    
   }
-  
 }
 
 @keyframes slideInUp {
@@ -339,6 +360,7 @@ a:hover {
     transform: translateY(20px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -350,25 +372,14 @@ a:hover {
   font-weight: 800;
   margin-bottom: 1rem;
   line-height: 1.2;
-  color: white;
-  text-align: center;
+  color: #ffffff;
+  text-align: left;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 890px) {
   .hero-text h1 {
-    font-size: 3rem;
-  }
-
-}
-
-@keyframes slideInUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
+    font-size: 2rem;
+    text-align: center;
   }
 }
 
@@ -378,30 +389,13 @@ a:hover {
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.9);
   animation: slideInUp 1s ease-out 0.5s forwards;
-}
-
-@media screen and (max-width: 890px) {
-  .hero-text h1 {
-    font-size: 3rem;
-  }
-  
+  text-align: left;
 }
 
 @media screen and (max-width: 768px) {
   .tagline {
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-align: center;
-  }
-}
-
-@keyframes slideInUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
   }
 }
 
@@ -411,14 +405,6 @@ a:hover {
   margin-top: -100px;
   position: relative;
   z-index: 3;
-
-}
-
-@media screen and (max-width: 430px) {
-  .wave-divider {
-    opacity: 0;
-  }
-  
 }
 
 .wave-divider svg {
@@ -426,14 +412,12 @@ a:hover {
   width: 100%;
 }
 
-/* Content Container */
 .content-container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-/* Section Styling */
 .about-section {
   padding: 4rem 0;
   position: relative;
@@ -455,7 +439,7 @@ a:hover {
   background: linear-gradient(135deg, #0ea5e9, #0369a1);
   border-radius: 50%;
   margin-right: 1rem;
-  color: white;
+  color: #ffffff;
   box-shadow: 0 4px 6px rgba(3, 105, 161, 0.2);
 }
 
@@ -485,16 +469,28 @@ a:hover {
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Mission Section */
 .mission-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   align-items: center;
+}
+
+@media (max-width: 767px) {
+  .mission-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .mission-text p {
@@ -524,8 +520,9 @@ a:hover {
 
 .image-frame img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   transition: transform 0.5s ease;
 }
 
@@ -534,17 +531,6 @@ a:hover {
 }
 
 
-
-.values-section::before {
-  content: '';
-  position: absolute;
-  top: -100px;
-  right: -100px;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, rgba(14, 165, 233, 0) 70%);
-  border-radius: 50%;
-}
 
 .values-section::after {
   content: '';
@@ -605,12 +591,10 @@ a:hover {
   line-height: 1.7;
 }
 
-
-
 .leader-section {
   background-color: #fdfdfd;
-  padding: 40px 20px;
-  margin-bottom: 40px;
+  padding: 80px 20px;
+  margin-bottom: 80px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
@@ -620,19 +604,15 @@ a:hover {
 .leader-section:hover {
   box-shadow: 0 15px 45px rgba(0, 80, 158, 0.18);
   transform: translateY(-12px);
-
 }
-
 
 .leader-container {
   display: flex;
   flex-direction: row;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
 }
-
-
 
 .leader-image-container {
   width: 220px;
@@ -699,14 +679,13 @@ a:hover {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #ffffff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .leader-social-links a:hover {
   color: #00c6ff;
   transform: translateY(-2px);
-
 }
 
 .meet-team-section {
@@ -811,7 +790,6 @@ a:hover {
   line-height: 1.5;
   margin-bottom: 20px;
   flex-grow: 1;
-  min-height: 60px;
 }
 
 .team-member-card .social-links {
@@ -949,7 +927,7 @@ a:hover {
   }
 
   .meet-team-section .section-subtitle {
-    font-size: 1em;
+    font-size: 1rem;
     margin-bottom: 40px;
   }
 
@@ -1000,7 +978,7 @@ a:hover {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575px) {
   .leader-title {
     font-size: 1.4em;
   }
@@ -1050,7 +1028,6 @@ a:hover {
   }
 }
 
-/* Partners Section */
 .partners-section {
   padding-bottom: 6rem;
 }
@@ -1132,7 +1109,6 @@ a:hover {
   transform: scaleX(1);
 }
 
-/* Footer Styles */
 .footer-section {
   background: linear-gradient(to right, #0f172a, #1e293b);
   color: #e2e8f0;
@@ -1154,7 +1130,7 @@ a:hover {
 }
 
 .footer-container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
@@ -1283,7 +1259,7 @@ a:hover {
 }
 
 .footer-bottom {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 3rem auto 0;
   padding: 1.5rem 2rem 0;
   display: flex;
@@ -1360,32 +1336,34 @@ a:hover {
   }
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
+html::-webkit-scrollbar {
   width: 10px;
 }
 
-::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track {
   background-color: #f1f1f1;
 }
 
-::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, #0ea5e9, #0369a1);
   border-radius: 5px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+html::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #0284c7, #075985);
 }
 
-/* Print styles */
 @media print {
-  .hero-parallax, .footer-section, .mobile-menu-button, .desktop-menu .action-button {
-    display: none;
+  .hero-parallax,
+  .footer-section,
+  .mobile-menu-button,
+  .desktop-menu .action-button,
+  #navbar {
+    display: none !important;
   }
 
   .main-content {
-    margin-top: 0;
+    margin-top: 0 !important;
   }
 
   .about-section {
@@ -1394,7 +1372,6 @@ a:hover {
   }
 }
 
-/* Accessibility improvements */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1412,19 +1389,19 @@ a:hover {
   outline-offset: 2px;
 }
 
-a:focus, button:focus {
+a:focus,
+button:focus {
   outline: 2px solid #0ea5e9;
   outline-offset: 2px;
 }
 
-/* Skip to content link for accessibility */
 .skip-to-content {
   position: absolute;
   left: -9999px;
   z-index: 9999;
   padding: 1rem 1.5rem;
   background-color: #0ea5e9;
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   border-radius: 0 0 5px 5px;
 }
@@ -1435,7 +1412,6 @@ a:focus, button:focus {
   top: 0;
 }
 
-/* JavaScript enabled classes */
 .js-enabled .mobile-menu {
   display: none;
 }
@@ -1443,4 +1419,3 @@ a:focus, button:focus {
 .js-enabled .mobile-menu.active {
   display: flex;
 }
-
