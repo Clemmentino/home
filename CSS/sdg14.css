@@ -328,11 +328,11 @@ a:hover {
 
 .sdg14-page-content {
   padding-top: 0;
-  background-color: #ffffff;
+  background-color:#f3f4f6;
 }
 
 .sdg14-hero-banner {
-  height: 100vh;
+  height: 95vh;
   min-height: 500px;
   background: url("../Images/statichero.jpg") no-repeat center center/cover;
   background-color: #003b73;
@@ -375,6 +375,7 @@ a:hover {
   transform: translateY(20px);
   opacity: 0;
   animation: slideInUp 1s ease-out 0.5s forwards;
+  text-align: left;
 }
 
 @keyframes slideInUp {
@@ -386,6 +387,15 @@ a:hover {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+@media screen and (max-width: 768px) {
+  .sdg14-hero-text-content {
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 15rem;
+  }
+  
 }
 
 .sdg14-hero-text-content h1 {
@@ -408,6 +418,13 @@ a:hover {
   }
 }
 
+@media screen and (max-width: 400px) {
+  .sdg14-hero-text-content h1 {
+    font-size: 1.8rem;
+  }
+  
+}
+
 .sdg14-hero-text-content p {
   font-size: 1.15rem;
   font-weight: 400;
@@ -427,10 +444,23 @@ a:hover {
   }
 }
 
+.wave-divider {
+  height: 100px;
+  width: 100%;
+  margin-top: -100px; 
+  position: relative;
+  z-index: 3;
+}
+.wave-divider svg {
+  height: 100%;
+  width: 100%;
+  
+}
+
 .sdg14-info-hub {
   padding-top: 5rem;
   padding-bottom: 6rem;
-  background-color: #fdfdfd;
+  background-color: #f3f4f6;
 }
 
 .info-tabs-container {

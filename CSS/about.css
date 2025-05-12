@@ -315,11 +315,23 @@ a:hover {
 
 .hero-text {
   max-width: 900px;
-  padding: 2.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  padding-right: 5rem;
   text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
   transform: translateY(20px);
   opacity: 0;
+  margin-bottom: 5rem;
   animation: slideInUp 1s ease-out 0.5s forwards;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-text {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    margin-bottom: 3rem;
+  }
+  
 }
 
 @keyframes slideInUp {
@@ -368,6 +380,13 @@ a:hover {
   animation: slideInUp 1s ease-out 0.5s forwards;
 }
 
+@media screen and (max-width: 890px) {
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+  
+}
+
 @media screen and (max-width: 768px) {
   .tagline {
     font-size: 1rem;
@@ -393,6 +412,13 @@ a:hover {
   position: relative;
   z-index: 3;
 
+}
+
+@media screen and (max-width: 430px) {
+  .wave-divider {
+    opacity: 0;
+  }
+  
 }
 
 .wave-divider svg {
@@ -507,12 +533,7 @@ a:hover {
   transform: scale(1.05);
 }
 
-/* Values Section */
-.values-section {
-  background-color: #f0f7ff;
-  position: relative;
-  overflow: hidden;
-}
+
 
 .values-section::before {
   content: '';
@@ -584,16 +605,7 @@ a:hover {
   line-height: 1.7;
 }
 
-.divider {
-  height: 40px;
-  width: 100%;
-  position: relative;
-}
 
-.divider svg {
-  height: 100%;
-  width: 100%;
-}
 
 .leader-section {
   background-color: #fdfdfd;
@@ -611,6 +623,7 @@ a:hover {
 
 }
 
+
 .leader-container {
   display: flex;
   flex-direction: row;
@@ -618,6 +631,8 @@ a:hover {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+
 
 .leader-image-container {
   width: 220px;
@@ -1429,22 +1444,3 @@ a:focus, button:focus {
   display: flex;
 }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .values-section {
-    background-color: #0f172a;
-  }
-
-  .value-card {
-    background-color: #1e293b;
-    color: #e2e8f0;
-  }
-
-  .value-card h3 {
-    color: #60a5fa;
-  }
-
-  .value-card p {
-    color: #cbd5e1;
-  }
-}
