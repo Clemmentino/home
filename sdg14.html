@@ -19,6 +19,7 @@
 <body>
     <div id="main-content" class="main-content">
 
+        
         <header id="navbar">
             <nav>
                 <div class="logo">
@@ -58,7 +59,7 @@
             </div>
         </header>
 
-
+        
 
         <main class="sdg14-page-content">
             <section class="sdg14-hero-banner">
@@ -83,7 +84,6 @@
                 </svg>
             </div>
 
-            <br> <br>
             <section class="sdg14-info-hub container">
                 <div class="info-tabs-container">
                     <div class="info-tabs-buttons">
@@ -202,6 +202,254 @@
                     </div>
                 </div>
             </section>
+
+            <section class="container my-5">
+                <h2>Marine Ecosystem Inventory System</h2>
+                <p class="mb-4">A system for managing and monitoring marine biodiversity and ecosystem health.</p>
+
+                <!-- --- 1. Create UI --- -->
+                <div id="create-ui" class="mb-5 pb-4 border-bottom">
+                    <h3>Add New Record</h3>
+                    <p>Input data for a new inventory item.</p>
+
+                    <div class="card custom-card-form"> <!-- Added custom class -->
+                        <div class="card-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="createSpeciesName" class="form-label">Species Name</label>
+                                    <input type="text" class="form-control" id="createSpeciesName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="createLocation" class="form-label">Location Observed</label>
+                                    <input type="text" class="form-control" id="createLocation" placeholder="e.g., Latitude, Longitude or Site Name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="createObservationDate" class="form-label">Date of Observation</label>
+                                    <input type="date" class="form-control" id="createObservationDate" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="createQuantity" class="form-label">Quantity / Abundance</label>
+                                    <input type="number" class="form-control" id="createQuantity" min="0">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="createCondition" class="form-label">Condition / Health Notes</label>
+                                    <textarea class="form-control" id="createCondition" rows="3"></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="createPhoto" class="form-label">Upload Photo (Optional)</label>
+                                    <input type="file" class="form-control" id="createPhoto">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit Record</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- --- 2. Read UI 1 (Table View) --- -->
+                <div id="read-table-ui" class="mb-5 pb-4 border-bottom">
+                    <h3>View Records (Table)</h3>
+                    <p>Inventory data.</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover align-middle custom-table"> <!-- Added custom class -->
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Species</th>
+                                    <th scope="col">Location</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Coral Reef (Healthy)</td>
+                                    <td>10.123, 120.456</td>
+                                    <td>2024-01-15</td>
+                                    <td>N/A</td>
+                                    <td>Vibrant colors, minimal bleaching observed.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Clownfish (Amphiprioninae)</td>
+                                    <td>10.150, 120.470</td>
+                                    <td>2024-01-16</td>
+                                    <td>~5 individuals</td>
+                                    <td>Observed in anemone cluster.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Plastic Debris</td>
+                                    <td>10.200, 120.500</td>
+                                    <td>2024-01-17</td>
+                                    <td>Estimate: 2kg</td>
+                                    <td>Concentrated near shoreline.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- --- 3. Read UI 2 (Card View) --- -->
+                <div id="read-card-ui" class="mb-5 pb-4 border-bottom"> 
+
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                        <!-- Sample Record Card 1 -->
+                        <div class="col">
+                            <div class="card h-100 custom-card"> <!-- Added custom class -->
+                                <div class="card-body">
+                                    <h5 class="card-title">Species: Coral Reef (Healthy)</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Record #1</h6>
+                                    <p class="card-text">
+                                        <strong>Location:</strong> 10.123, 120.456<br>
+                                        <strong>Date:</strong> 2024-01-15<br>
+                                        <strong>Quantity:</strong> N/A<br>
+                                        <strong>Notes:</strong> Vibrant colors, minimal bleaching observed.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sample Record Card 2 -->
+                        <div class="col">
+                            <div class="card h-100 custom-card"> <!-- Added custom class -->
+                                <div class="card-body">
+                                    <h5 class="card-title">Species: Clownfish</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Record #2</h6>
+                                    <p class="card-text">
+                                        <strong>Location:</strong> 10.150, 120.470<br>
+                                        <strong>Date:</strong> 2024-01-16<br>
+                                        <strong>Quantity:</strong> ~5 individuals<br>
+                                        <strong>Notes:</strong> Observed in anemone cluster.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sample Record Card 3 -->
+                        <div class="col">
+                            <div class="card h-100 custom-card"> <!-- Added custom class -->
+                                <div class="card-body">
+                                    <h5 class="card-title">Item: Plastic Debris</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Record #3</h6>
+                                    <p class="card-text">
+                                        <strong>Location:</strong> 10.200, 120.500<br>
+                                        <strong>Date:</strong> 2024-01-17<br>
+                                        <strong>Quantity:</strong> Estimate: 2kg<br>
+                                        <strong>Notes:</strong> Concentrated near shoreline.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- --- 4. Update UI --- -->
+                <div id="update-ui" class="mb-5 pb-4 border-bottom">
+                    <h3>Edit Record</h3>
+                    <p>Update Details for Record #2: Clownfish</p>
+
+                    <div class="card custom-card-form"> <!-- Added custom class -->
+                        <div class="card-body">
+                            <form>
+                                <!-- Hidden input for record ID -->
+                                <input type="hidden" name="recordId" value="2">
+
+                                <div class="mb-3">
+                                    <label for="editSpeciesName" class="form-label">Species Name</label>
+                                    <input type="text" class="form-control" id="editSpeciesName" value="Clownfish (Amphiprioninae)" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editLocation" class="form-label">Location Observed</label>
+                                    <input type="text" class="form-control" id="editLocation" value="10.150, 120.470" placeholder="e.g., Latitude, Longitude or Site Name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editObservationDate" class="form-label">Date of Observation</label>
+                                    <input type="date" class="form-control" id="editObservationDate" value="2024-01-16" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editQuantity" class="form-label">Quantity / Abundance</label>
+                                    <input type="number" class="form-control" id="editQuantity" value="5" min="0">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editCondition" class="form-label">Condition / Health Notes</label>
+                                    <textarea class="form-control" id="editCondition" rows="3">Observed in anemone cluster.</textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editPhoto" class="form-label">Update Photo (Optional)</label>
+                                    <input type="file" class="form-control" id="editPhoto">
+                                </div>
+                                <button type="submit" class="btn btn-success me-2">Save Changes</button>
+                                <button type="button" class="btn btn-secondary">Cancel</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- --- 5. Delete UI --- -->
+                <div id="delete-ui" class="mb-5 pb-4"> <!-- Removed border-bottom for the last section -->
+                    <h3>Delete Records</h3>
+                    <p>Deleting inventory records.</p>
+
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover align-middle custom-table"> <!-- Added custom class -->
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Species</th>
+                                    <th scope="col">Location</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Coral Reef (Healthy)</td>
+                                    <td>10.123, 120.456</td>
+                                    <td>2024-01-15</td>
+                                    <td>
+                                        <!-- Button to trigger a delete confirmation modal -->
+                                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Clownfish</td>
+                                    <td>10.150, 120.470</td>
+                                    <td>2024-01-16</td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Plastic Debris</td>
+                                    <td>10.200, 120.500</td>
+                                    <td>2024-01-17</td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteConfirmationModal">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <br> <br>
+            
         </main>
 
         <footer class="footer-section" id="footer">
