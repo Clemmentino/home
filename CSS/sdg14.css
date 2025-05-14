@@ -546,6 +546,14 @@ a:hover {
   color: #34495e;
   font-size: 1em;
   font-family: "Inter", sans-serif;
+  width: 80%;
+}
+
+@media screen and (max-width: 768px) {
+  .custom-card-form .form-control {
+    width: 70%;
+  }
+  
 }
 
 .custom-card-form .form-control:focus {
